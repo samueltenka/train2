@@ -1,0 +1,7 @@
+Notes for Python
+dynamically typed
+print shows stuff
+input fetches user input
+i am a ham email
+sam i am
+moooooo said the cow
