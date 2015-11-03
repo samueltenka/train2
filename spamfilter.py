@@ -1,6 +1,6 @@
 ## FILE IO
 print("training...")
-labels = ('spam','ham')
+labels = ('spample','hample')
 def uniq_words(filename):
    with open(filename) as myfile:
       return set(myfile.read().split())
@@ -12,13 +12,13 @@ bags = {l:[uniq_words(l+str(i)+'.txt')
 
 ## COMPUTE WORD ASSOCIATIONS
 print("word...")
-def compute_freqs(baglist):
+def compute_freqs(list_of_wordsets):
    freqs={}
-   for bag in baglist:
-      for word in bag:
+   for wordset in list_of_wordsets:
+      for word in wordset:
          if word not in freqs:
             freqs[word] = 0.0
-         freqs[word] += 1.0/len(baglist)
+         freqs[word] += 1.0/len(list_of_wordsets)
    return freqs
 class WordCounter:
    def __init__(self, freqs, num_docs):
@@ -45,8 +45,8 @@ def label_given_words(wordset, label,prior):
 ## CLASSIFICATION
 print("ready!...")
 while True:
-   wset = uniq_words(raw_input("filename?"))
-   prob_spam = label_given_words(wset,'spam',0.25)
+   wset = uniq_words(input("filename?"))
+   prob_spam = label_given_words(wset,'spample',0.25)
    if prob_spam > 0.1:
       print("SPAM!", prob_spam)
    else:
