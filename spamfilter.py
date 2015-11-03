@@ -47,7 +47,7 @@ print("ready!...")
 while True:
    wset = uniq_words(input("filename?"))
    prob_spam = label_given_words(wset,'spample',0.25)
-   if prob_spam > 0.1:
+   if prob_spam > 0.2:
       print("SPAM!", prob_spam)
    else:
       print("ham.", prob_spam)
